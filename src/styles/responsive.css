@@ -1,0 +1,147 @@
+/* ===== RESPONSIVE ===== */
+
+/* --- 1080px: Adjust grid columns --- */
+@media (max-width: 1080px) {
+  .quick-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fac-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-row {
+    flex-wrap: wrap;
+  }
+
+  .brand-mark {
+    flex: 0 0 auto;
+  }
+
+  nav.primary-nav {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .nav-cta {
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+}
+
+/* --- 860px: Hamburger menu appears --- */
+@media (max-width: 860px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  nav.primary-nav {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .hero-copy h1 {
+    font-size: 38px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-grid,
+  .why-grid,
+  .appt-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fac-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .doc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    background: #fff;
+    border-top: 1px solid #E2E8F0;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, .08);
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  footer {
+    padding-bottom: 96px;
+  }
+}
+
+/* --- 560px: Single column everything --- */
+@media (max-width: 560px) {
+  .quick-grid,
+  .grid-3,
+  .grid-4,
+  .fac-grid,
+  .doc-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-copy h1 {
+    font-size: 32px;
+  }
+}
