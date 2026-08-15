@@ -4,7 +4,7 @@ import { quickActions } from "../../data/quickActions";
 
 export default function QuickActions() {
   return (
-    <section className="quick-actions">
+    <section className="quick-actions" style={{ paddingTop: '6rem' }}>
       <div className="wrap">
         <div className="quick-grid">
           {quickActions.map((card) => (
