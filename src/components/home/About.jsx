@@ -1,9 +1,6 @@
 import { Stethoscope, TriangleAlert } from "lucide-react";
 
-// About section image — replace with real hospital photo:
-// import aboutImage from "../../assets/images/about/about-hospital.jpg";
-const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop";
+import ABOUT_IMAGE from "../../assets/images/AdoutUs.jpeg";
 
 const points = [
   {
