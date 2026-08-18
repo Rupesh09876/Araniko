@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import SectionHead from "../common/SectionHead";
 import { doctors } from "../../data/doctors";
@@ -14,30 +15,35 @@ export default function Doctors() {
 
         <div className="doc-grid">
           {doctors.map((doctor) => (
-            <div className="doc-card" key={doctor.id}>
-              <div
-                className="doc-avatar"
-                style={{ background: doctor.avatarColor }}
-                aria-hidden="true"
-              >
-                {doctor.initials}
+            <Link to={`/doctors/${doctor.id}`} className="doc-card" key={doctor.id}>
+              <div className="doc-image-wrapper">
+                <img 
+                  src={doctor.image} 
+                  alt={doctor.name} 
+                />
               </div>
-              <div className="doc-name">{doctor.name}</div>
-              <div className="doc-spec">{doctor.specialty}</div>
-              <div className="doc-dept">{doctor.department}</div>
-              <a href="#contact" className="doc-link">
-                View Profile
-                <ArrowRight size={14} strokeWidth={2} />
-              </a>
-            </div>
+              <div className="doc-body">
+                <h3 className="doc-name">{doctor.name}</h3>
+                <div className="doc-meta-inline">
+                  <span className="doc-spec">{doctor.specialty}</span>
+                  <span className="doc-separator">|</span>
+                  <span className="doc-dept">{doctor.department}</span>
+                </div>
+              </div>
+              <div className="doc-footer">
+                <span className="view-profile-text">
+                  View Profile <ArrowRight size={14} strokeWidth={2} />
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 
         <div className="center">
-          <a href="#contact" className="btn btn-outline">
+          <Link to="/doctors" className="btn btn-outline">
             View All Doctors
             <ArrowRight size={16} strokeWidth={2} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
