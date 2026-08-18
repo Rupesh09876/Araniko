@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Menu, X, Phone, CalendarDays, Plus } from "lucide-react";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#departments", label: "Departments" },
-  { href: "#doctors", label: "Doctors" },
-  { href: "#facilities", label: "Facilities" },
-  { href: "#news", label: "News" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#departments", label: "Departments" },
+  { href: "/#doctors", label: "Doctors" },
+  { href: "/#facilities", label: "Facilities" },
+  { href: "/#news", label: "News" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
     <header className="site-header">
       <div className="wrap nav-row">
         {/* Brand */}
-        <a href="#home" className="brand-mark" onClick={closeMenu}>
+        <a href="/#home" className="brand-mark" onClick={closeMenu}>
           <div className="brand-badge" aria-hidden="true">
             <Plus size={22} strokeWidth={2.5} color="#fff" />
           </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <Phone size={14} strokeWidth={2} />
             Emergency
           </a>
-          <a href="#appointment" className="btn btn-primary">
+          <a href="/#appointment" className="btn btn-primary">
             <CalendarDays size={14} strokeWidth={2} />
             Book Appointment
           </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
             <Phone size={14} strokeWidth={2} />
             Emergency: 021-543981
           </a>
-          <a href="#appointment" className="btn btn-primary" onClick={closeMenu}>
+          <a href="/#appointment" className="btn btn-primary" onClick={closeMenu}>
             <CalendarDays size={14} strokeWidth={2} />
             Book Appointment
           </a>
