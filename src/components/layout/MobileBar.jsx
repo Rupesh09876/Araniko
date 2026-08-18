@@ -24,7 +24,7 @@ export default function MobileBar() {
       </a>
       <div style={{ width: "1px", background: "#E2E8F0" }} aria-hidden="true" />
       <a
-        href="#appointment"
+        href="/#appointment"
         style={{
           flex: 1,
           display: "flex",
