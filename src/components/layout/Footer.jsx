@@ -2,18 +2,18 @@ import { MapPin, Phone, Mail, Plus } from "lucide-react";
 import FacebookIcon from "../common/FacebookIcon";
 
 const quickLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#departments", label: "Departments" },
-  { href: "#doctors", label: "Doctors" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#departments", label: "Departments" },
+  { href: "/#doctors", label: "Doctors" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 const patientLinks = [
-  { href: "#appointment", label: "Appointments" },
-  { href: "#facilities", label: "Patient Information" },
-  { href: "#contact", label: "Visiting Information" },
+  { href: "/#appointment", label: "Appointments" },
+  { href: "/#facilities", label: "Patient Information" },
+  { href: "/#contact", label: "Visiting Information" },
   { href: "tel:021543981", label: "Emergency" },
 ];
 
