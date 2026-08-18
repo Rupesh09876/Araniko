@@ -145,3 +145,29 @@
     font-size: 32px;
   }
 }
+
+/* --- Responsive All Doctors & Doctor Details --- */
+@media (max-width: 992px) {
+  .doc-details-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .doc-image-col {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .all-doctors-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .mobile-filter-toggle {
+    display: inline-flex;
+  }
+  .doctors-filters {
+    display: none;
+  }
+  .doctors-filters.show {
+    display: flex;
+  }
+}
