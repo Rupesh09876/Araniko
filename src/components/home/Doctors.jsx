@@ -32,7 +32,7 @@ export default function Doctors() {
               </div>
               <div className="doc-footer">
                 <span className="view-profile-text">
-                  View Profile <ArrowRight size={14} strokeWidth={2} />
+                  View Profile <ArrowRight size={15} strokeWidth={2} />
                 </span>
               </div>
             </Link>
