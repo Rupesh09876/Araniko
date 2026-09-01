@@ -1,6 +1,12 @@
 import { Stethoscope, TriangleAlert } from "lucide-react";
+import { useState, useEffect } from "react";
+import { profileService } from "../../services/api";
 
 import ABOUT_IMAGE from "../../assets/images/AdoutUs.jpeg";
+
+const BACKEND_URL = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace("/api", "")
+  : "http://localhost:5001";
 
 const points = [
   {
@@ -16,6 +22,30 @@ const points = [
 ];
 
 export default function About() {
+  const [profile, setProfile] = useState({
+    chairmanName: "Raj Kumar Pomoo Limbu",
+    chairmanTitle: "Chairman, Araniko Hospital",
+    chairmanImage: null,
+  });
+
+  useEffect(() => {
+    profileService.get().then((data) => {
+      if (data) setProfile(data);
+    }).catch(() => {
+      // silently fallback to default values if API unavailable
+    });
+  }, []);
+
+  const initials = profile.chairmanName
+    ? profile.chairmanName.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase()
+    : "RL";
+
+  const imageUrl = profile.chairmanImage
+    ? profile.chairmanImage.startsWith("http")
+      ? profile.chairmanImage
+      : `${BACKEND_URL}${profile.chairmanImage}`
+    : null;
+
   return (
     <section id="about" className="on-white">
       <div className="wrap about-grid">
@@ -23,8 +53,8 @@ export default function About() {
         <div className="about-media">
           <div className="about-img">
             <img
-              src={ABOUT_IMAGE}
-              alt="Interior of Araniko Hospital medical facility"
+              src={imageUrl || ABOUT_IMAGE}
+              alt={profile.chairmanName || "Interior of Araniko Hospital medical facility"}
               loading="lazy"
             />
           </div>
@@ -63,12 +93,21 @@ export default function About() {
             ))}
           </div>
 
-          {/* Chairman */}
+          {/* Chairman — dynamically from backend */}
           <div className="chairman">
-            <div className="chairman-badge" aria-hidden="true">RL</div>
+            {imageUrl ? (
+              <img
+                src={imageUrl}
+                alt={profile.chairmanName}
+                className="chairman-badge"
+                style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }}
+              />
+            ) : (
+              <div className="chairman-badge" aria-hidden="true">{initials}</div>
+            )}
             <div>
-              <div className="chairman-name">Raj Kumar Pomoo Limbu</div>
-              <div className="chairman-role">Chairman, Araniko Hospital</div>
+              <div className="chairman-name">{profile.chairmanName}</div>
+              <div className="chairman-role">{profile.chairmanTitle}</div>
             </div>
           </div>
         </div>
