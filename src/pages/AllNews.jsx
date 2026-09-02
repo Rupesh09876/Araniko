@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Megaphone, Calendar, Loader2 } from "lucide-react";
 import SectionHead from "../components/common/SectionHead";
 import { newsService } from "../services/api";
@@ -65,7 +66,7 @@ export default function AllNews() {
                 : null;
 
               return (
-                <div className="news-card" key={item.id}>
+                <Link to={`/news/${item.id}`} className="news-card" key={item.id} style={{ display: "block" }}>
                   {imgSrc && (
                     <div className="news-card-img-wrapper">
                       <img src={imgSrc} alt={item.title} className="news-card-img" />
@@ -87,7 +88,7 @@ export default function AllNews() {
                         : item.content}
                     </p>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
